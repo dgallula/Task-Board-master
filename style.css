@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'RichDiamondDemoRegular';
+    src: url(assets/fonts/RichDiamondDemoRegular.ttf);
+}
+
+/* Document manipulation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    overflow-x: hidden;
+    color: #333;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/background.png);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 3fr;
+    justify-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-width: 100vw;
+}
+
+/* Header */
+header {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+    z-index: 2;
+    transition: transform 0.5s;
+    background-image: url(assets/images/pin.png), url(assets/images/notebg.png);
+    background-repeat: no-repeat;
+    background-size: 15px, 350px;
+    background-position: top, 0 100%;
+}
+
+h1 {
+    font-family: 'RichDiamondDemoRegular', sans-serif;
+    font-size: 45px;
+    font-weight: 300;
+}
+
+/* Header animation */
+header:hover {
+    transform: skewY(3deg)
+}
+
+/* form */
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    min-width: 100vw;
+}
+
+form {
+    width: 500px;
+    border-radius: 6px;
+    box-shadow: 5px 15px 15px 0px rgba(0, 0, 0, 0.7);
+    background-image: url(assets/images/pin.png), url(assets/images/pin.png), url(assets/images/form.jpg);
+    background-repeat: no-repeat;
+    background-size: 10px, 10px, cover;
+    background-position: top left, bottom right;
+}
+
+form div {
+    display: flex;
+    justify-content: left;
+    padding-left: 30px;
+    border-bottom: 1px solid black;
+}
+
+div:nth-child(5),
+div:nth-child(6) {
+    border-bottom: none;
+}
+
+form div input,
+form div button {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 1px;
+    margin-right: 8px;
+}
+
+form div input[type="text"] {
+    margin-top: 5px;
+    font-size: 100%;
+}
+
+form div input:focus,
+form div button:focus {
+    outline: none;
+}
+
+/* Error container */
+.container-status {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    background-color: #e63922;
+    color: #fff;
+}
+
+/* Notes */
+.container-notes {
+    min-width: 100vw;
+    padding: 0 10px;
+}
+
+.box-note {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    justify-items: center;
+    padding-left: 10px;
+}
+
+.note-style {
+    width: 180px;
+    height: 250px;
+    position: relative;
+    padding: 10px;
+    transition: transform 0.2s;
+    list-style-type: none;
+    background-image: url(assets/images/notebg.png);
+    opacity: 1;
+    animation-name: fadeInNote;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+}
+
+@keyframes fadeInNote {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.note-style:hover { transform: skewY(-1deg); }
+
+.container-delete-icon {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.container-delete-icon button {
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    border: none;
+    z-index: 1;
+    cursor: pointer;
+    background-color: transparent;
+    color: #e84118;
+}
+
+.fa-window-close {
+    font-size: 150%;
+    background-color: #FEFF99;
+}
+
+.note-style:hover .container-delete-icon {
+    visibility: visible;
+    opacity: 1;
+}
+
+.task-note {
+    height: 250px;
+    max-height: 150px;
+    margin-top:20px;
+    word-wrap: break-word;
+    transform: skewY(1deg);
+    overflow-y: auto;
+}
+
+.task-date-time { transform: skewY(1deg); }
+
+p {
+    margin: 0;
+}

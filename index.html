@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/5c417ddc8d.js" crossorigin="anonymous" defer></script>
+    <script src="script.js" defer></script>
+    <title>Task_Board</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>My Task Board</h1>
+      </header>
+
+      <section class="board-section">
+        <div class="form-container">
+          <form action="#" method="get" target="_self">
+            <div>
+              <label for="task-info"></label>
+              <input type="text" id="task-info" placeholder="Enter your task" />
+            </div>
+
+            <div>
+              <label for="task-date">Date:</label>
+              <input type="date" id="task-date" />
+            </div>
+
+            <div>
+              <label for="task-time">Time:</label>
+              <input type="time" name="task-time" id="task-time" />
+            </div>
+
+            <div>
+              <button type="submit">Add Note</button>
+            </div>
+
+            <div>
+              <button type="reset">Reset Form</button>
+            </div>
+
+            <div id="container-status" class="container-status"></div>
+          </form>
+        </div>
+
+        <div id="container-notes" class="container-notes">
+          <ul id="note" class="box-note"></ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
